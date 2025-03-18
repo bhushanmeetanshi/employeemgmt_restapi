@@ -1,22 +1,22 @@
 import express from "express";
-import dotenv from "dotenv";
-import connectDB from "./config/connect.js";
+import connectDB from "./config/connect.js"; // Database connection
 import employeeRoutes from "./routes/employeeRoutes.js";
 
-dotenv.config();
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-// Middleware to parse JSON
+// Middleware
 app.use(express.json());
 
-// Connect to MongoDB
-connectDB();
-
 // Routes
+app.get("/", (req, res) => {
+  res.status(200).send("Welcome to Employee Management API 🚀");
+});
+
+// Employee Routes
 app.use("/api/employees", employeeRoutes);
 
-app.listen(PORT, () =>
-  console.log(`Server running on http://localhost:${PORT}`)
-);
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
