@@ -1,0 +1,22 @@
+{
+  "name": "emp-restapi",
+  "version": "1.0.0",
+  "description": "rest api for employee management",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Node",
+    "API",
+    "EmployeeManagememnt"
+  ],
+  "author": "Bhushan Trivedi",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
+}
