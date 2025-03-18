@@ -107,10 +107,10 @@ router.put("/:id", async (req, res) => {
 // GET All Employees
 router.get("/", async (req, res) => {
   try {
-    const employees = await Employee.find();
+    const employees = await Employee.find().lean().limit(20);
     res.status(200).json(employees);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 });
 
